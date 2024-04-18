@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(viewModel.personsList, id: \.self) { person in
+                ForEach(viewModel.sortedPersonsList, id: \.self) { person in
                     HStack {
                         person.swiftUiImage
                             .resizable()
@@ -40,11 +40,11 @@ struct ContentView: View {
                 }
             }        
             .navigationDestination(for: Person.self) { person in
-                DetailView(person: person)
+                DetailView(person: person, locationFetcher: viewModel.locationFetcher)
             }
         }
         .sheet(isPresented: $addViewSheet) {
-            AddView { person in
+            AddView(locationFetcher: viewModel.locationFetcher) { person in
                 viewModel.personsList.append(person)
             }
         }

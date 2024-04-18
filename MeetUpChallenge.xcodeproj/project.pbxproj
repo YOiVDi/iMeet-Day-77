@@ -17,6 +17,8 @@
 		857C07F72BCE43EF006B67C8 /* AddView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C07F62BCE43EF006B67C8 /* AddView-ViewModel.swift */; };
 		857C07F92BCE459A006B67C8 /* Filemanager-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C07F82BCE459A006B67C8 /* Filemanager-Extension.swift */; };
 		857C07FB2BCE4E93006B67C8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C07FA2BCE4E93006B67C8 /* DetailView.swift */; };
+		857C07FD2BCF8B5A006B67C8 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C07FC2BCF8B5A006B67C8 /* LocationFetcher.swift */; };
+		857C07FF2BCF92C3006B67C8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C07FE2BCF92C3006B67C8 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		857C07F62BCE43EF006B67C8 /* AddView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddView-ViewModel.swift"; sourceTree = "<group>"; };
 		857C07F82BCE459A006B67C8 /* Filemanager-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filemanager-Extension.swift"; sourceTree = "<group>"; };
 		857C07FA2BCE4E93006B67C8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		857C07FC2BCF8B5A006B67C8 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		857C07FE2BCF92C3006B67C8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,13 +68,10 @@
 			isa = PBXGroup;
 			children = (
 				852664052BCBC8E600E3C7C2 /* MeetUpChallengeApp.swift */,
-				852664072BCBC8E600E3C7C2 /* ContentView.swift */,
-				857C07F42BCE4365006B67C8 /* ContentView-ViewModel.swift */,
-				852664192BCC007100E3C7C2 /* AddView.swift */,
-				857C07F62BCE43EF006B67C8 /* AddView-ViewModel.swift */,
-				857C07FA2BCE4E93006B67C8 /* DetailView.swift */,
-				852664172BCBF44E00E3C7C2 /* Person.swift */,
-				857C07F82BCE459A006B67C8 /* Filemanager-Extension.swift */,
+				85879DD12BD05B5600E5987A /* View-ViewModel */,
+				85879DD02BD05B3200E5987A /* Manager */,
+				85879DCF2BD05B2400E5987A /* Model */,
+				85879DD52BD05BA500E5987A /* Extensions */,
 				852664092BCBC8E800E3C7C2 /* Assets.xcassets */,
 				8526640B2BCBC8E800E3C7C2 /* Preview Content */,
 			);
@@ -83,6 +84,67 @@
 				8526640C2BCBC8E800E3C7C2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		85879DCF2BD05B2400E5987A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				852664172BCBF44E00E3C7C2 /* Person.swift */,
+				857C07FE2BCF92C3006B67C8 /* Location.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		85879DD02BD05B3200E5987A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				857C07FC2BCF8B5A006B67C8 /* LocationFetcher.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		85879DD12BD05B5600E5987A /* View-ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				85879DD22BD05B6200E5987A /* Content-View */,
+				85879DD32BD05B6A00E5987A /* Add-View */,
+				85879DD42BD05B7400E5987A /* Detail-View */,
+			);
+			path = "View-ViewModel";
+			sourceTree = "<group>";
+		};
+		85879DD22BD05B6200E5987A /* Content-View */ = {
+			isa = PBXGroup;
+			children = (
+				852664072BCBC8E600E3C7C2 /* ContentView.swift */,
+				857C07F42BCE4365006B67C8 /* ContentView-ViewModel.swift */,
+			);
+			path = "Content-View";
+			sourceTree = "<group>";
+		};
+		85879DD32BD05B6A00E5987A /* Add-View */ = {
+			isa = PBXGroup;
+			children = (
+				852664192BCC007100E3C7C2 /* AddView.swift */,
+				857C07F62BCE43EF006B67C8 /* AddView-ViewModel.swift */,
+			);
+			path = "Add-View";
+			sourceTree = "<group>";
+		};
+		85879DD42BD05B7400E5987A /* Detail-View */ = {
+			isa = PBXGroup;
+			children = (
+				857C07FA2BCE4E93006B67C8 /* DetailView.swift */,
+			);
+			path = "Detail-View";
+			sourceTree = "<group>";
+		};
+		85879DD52BD05BA500E5987A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				857C07F82BCE459A006B67C8 /* Filemanager-Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,12 +219,14 @@
 			files = (
 				852664182BCBF44E00E3C7C2 /* Person.swift in Sources */,
 				857C07FB2BCE4E93006B67C8 /* DetailView.swift in Sources */,
+				857C07FF2BCF92C3006B67C8 /* Location.swift in Sources */,
 				857C07F72BCE43EF006B67C8 /* AddView-ViewModel.swift in Sources */,
 				857C07F52BCE4365006B67C8 /* ContentView-ViewModel.swift in Sources */,
 				857C07F92BCE459A006B67C8 /* Filemanager-Extension.swift in Sources */,
 				8526641A2BCC007100E3C7C2 /* AddView.swift in Sources */,
 				852664082BCBC8E600E3C7C2 /* ContentView.swift in Sources */,
 				852664062BCBC8E600E3C7C2 /* MeetUpChallengeApp.swift in Sources */,
+				857C07FD2BCF8B5A006B67C8 /* LocationFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +362,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MeetUpChallenge/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is needed to save your meet.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -326,6 +391,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MeetUpChallenge/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is needed to save your meet.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

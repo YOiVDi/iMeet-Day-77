@@ -10,7 +10,8 @@ import PhotosUI
 
 struct AddView: View {
     @Environment(\.dismiss) var dismiss
-    @State private var viewModel = ViewModel()
+    @State private var viewModel: ViewModel
+    
     var save: (Person) -> Void
     
     var body: some View {
@@ -77,9 +78,14 @@ struct AddView: View {
                 }
             }
         }
+        .onAppear(perform: viewModel.locationFetcher.start)
+    }
+    init(locationFetcher: LocationFetcher, save: @escaping (Person) -> Void) {
+        _viewModel = State(initialValue: ViewModel(locationFetcher: locationFetcher))
+        self.save = save
     }
 }
 
 #Preview {
-    AddView() {_ in}
+    AddView(locationFetcher: LocationFetcher()) {_ in}
 }

@@ -16,8 +16,14 @@ extension ContentView {
             }
         }
         
+        var sortedPersonsList: [Person] {
+            personsList.sorted()
+        }
+        
         let path = FileManager().getDocumentDirectory
         let key = "personsList"
+        
+        let locationFetcher = LocationFetcher()
         
         init() {
             do {
